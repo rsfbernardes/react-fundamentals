@@ -1,33 +1,33 @@
 import React from "react";
 
 import Post from "./Post";
-
-const category = 'Posts Of The Week'
+import Header from "./Head";
 
 function App() {
   return (
     <>
-      <h1>JStack's Blog</h1>
-      <h2>{category}</h2>
+      <Header title="JStack's Blog">
+        <h2>Posts Of The Week</h2>
+      </Header>
 
       <hr />
 
       <Post 
         post={{
-          title: 'Title 01',
-          subtitle: 'Subtitle 01'
+          title: 'News Title 01',
+          subtitle: 'News Subtitle 01'
         }}
       />
       <Post 
         post={{
-          title: 'Title 02',
-          subtitle: 'Subtitle 02'
+          title: 'News Title 02',
+          subtitle: 'News Subtitle 02'
         }}
       />
       <Post 
         post={{
-          title: 'Title 03',
-          subtitle: 'Subtitle 03'
+          title: 'News Title 03',
+          subtitle: 'News Subtitle 03'
         }}
       />
     </>
