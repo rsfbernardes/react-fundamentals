@@ -6,7 +6,7 @@ import Header from "./Header";
 function App() {
   return (
     <>
-      <Header title="JStack's Blog">
+      <Header>
       <h2>Posts Of The Week</h2>
       </Header>
 
