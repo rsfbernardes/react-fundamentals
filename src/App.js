@@ -3,6 +3,13 @@ import React from "react";
 import Post from "./Post";
 import Header from "./Header";
 
+const posts = [
+  {title: 'Title#01', subtitle: 'Sub#01', likes: 20},
+  {title: 'Title#02', subtitle: 'Sub#02', likes: 10},
+  {title: 'Title#03', subtitle: 'Sub#03', likes: 50},
+  {title: 'Title#04', subtitle: 'Sub#04', likes: 50},
+];
+
 function App() {
   return (
     <>
@@ -12,27 +19,16 @@ function App() {
 
       <hr />
 
-      <Post 
-        likes={20}
-        post={{
-          title: 'News Title 01',
-          subtitle: 'News Subtitle 01'
-        }}
-      />
-      <Post 
-        likes={10}
-        post={{
-          title: 'News Title 02',
-          subtitle: 'News Subtitle 02'
-        }}
-      />
-      <Post 
-        likes={50}
-        post={{
-          title: 'News Title 03',
-          subtitle: 'News Subtitle 03'
-        }}
-      />
+      {posts.map(post => (
+        <Post 
+          key={post.title}
+          likes={post.likes}
+          post={{
+            title: post.title,
+            subtitle: post.subtitle,
+          }}
+        />
+      ))}
     </>
   );
 };
