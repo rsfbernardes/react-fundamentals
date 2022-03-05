@@ -19,6 +19,7 @@ function App() {
           title: `Title#0${prevState.length + 1}`,
           subtitle: `Sub#0${prevState.length + 1}`,
           likes: 50,
+          read: false,
         },
       ]));
   }
