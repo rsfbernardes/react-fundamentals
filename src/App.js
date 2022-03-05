@@ -5,10 +5,10 @@ import Header from "./Header";
 
 function App() {
   const [posts, setPosts] = useState([
-    { id: Math.random(), title: 'Title#01', subtitle: 'Sub#01', likes: 50 },
-    { id: Math.random(), title: 'Title#02', subtitle: 'Sub#02', likes: 10 },
-    { id: Math.random(), title: 'Title#03', subtitle: 'Sub#03', likes: 50 },
-    { id: Math.random(), title: 'Title#04', subtitle: 'Sub#04', likes: 50 },
+    { id: Math.random(), title: 'Title#01', subtitle: 'Sub#01', likes: 50, read: false },
+    { id: Math.random(), title: 'Title#02', subtitle: 'Sub#02', likes: 10, read: true },
+    { id: Math.random(), title: 'Title#03', subtitle: 'Sub#03', likes: 50, read: false },
+    { id: Math.random(), title: 'Title#04', subtitle: 'Sub#04', likes: 50, read: true },
   ]);
 
   function handleInsert() {
@@ -47,11 +47,7 @@ function App() {
           key={post.id}
           likes={post.likes}
           onRemove={handleRemovePost}
-          post={{
-            id: post.id,
-            title: post.title,
-            subtitle: post.subtitle,
-          }}
+          post={post}
         />
       ))}
     </>
