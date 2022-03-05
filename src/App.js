@@ -11,14 +11,7 @@ function App() {
     { id: Math.random(), title: 'Title#04', subtitle: 'Sub#04', likes: 50 },
   ]);
 
-  console.log({ posts });
-
   function handleInsert() {
-    // posts.push({
-    //   
-    // })
-
-    setTimeout(() => {
       setPosts((prevState => [
         ...prevState,
         {
@@ -28,7 +21,14 @@ function App() {
           likes: 50,
         },
       ]));
-    }, 2000);
+  }
+
+  function handleRemovePost(postId) {
+    setPosts(
+      (prevState) => prevState.filter(
+        (post) => post.id !== postId
+      )
+    );
   }
 
   return (
@@ -46,7 +46,9 @@ function App() {
         <Post
           key={post.id}
           likes={post.likes}
+          onRemove={handleRemovePost}
           post={{
+            id: post.id,
             title: post.title,
             subtitle: post.subtitle,
           }}
