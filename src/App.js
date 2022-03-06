@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import Post from "./Post";
 import Header from "./Header";
+import Button from "./Button";
+import { ThemeProvider } from "./ThemeContext";
 
 function App() {
   const [posts, setPosts] = useState([
@@ -12,16 +14,16 @@ function App() {
   ]);
 
   function handleInsert() {
-      setPosts((prevState => [
-        ...prevState,
-        {
-          id: Math.random(),
-          title: `Title#0${prevState.length + 1}`,
-          subtitle: `Sub#0${prevState.length + 1}`,
-          likes: 50,
-          read: false,
-        },
-      ]));
+    setPosts((prevState => [
+      ...prevState,
+      {
+        id: Math.random(),
+        title: `Title#0${prevState.length + 1}`,
+        subtitle: `Sub#0${prevState.length + 1}`,
+        likes: 50,
+        read: false,
+      },
+    ]));
   }
 
   function handleRemovePost(postId) {
@@ -33,11 +35,11 @@ function App() {
   }
 
   return (
-    <>
+    <ThemeProvider>
       <Header>
         <h2>
           Posts Of The Week
-          <button onClick={handleInsert}>Insert</button>
+          <Button onClick={handleInsert}>Insert</Button>
         </h2>
       </Header>
 
@@ -51,7 +53,7 @@ function App() {
           post={post}
         />
       ))}
-    </>
+    </ThemeProvider>
   );
 };
 

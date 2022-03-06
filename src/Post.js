@@ -7,8 +7,7 @@ export default function Post(props) {
   return (
     <>
       <article>
-        <PostHeader
-          onRemove={props.onRemove}
+        <PostHeader onRemove={props.onRemove}
           post={{
             id: props.post.id,
             title: props.post.title,
