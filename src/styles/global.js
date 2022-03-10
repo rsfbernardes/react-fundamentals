@@ -6,4 +6,8 @@ export default createGlobalStyle`
     color: #fff;
     font-family: sans-serif;
   }
+
+  article {
+    margin-bottom: 12px;
+  }
 `
