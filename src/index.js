@@ -8,7 +8,7 @@ import App from './components/App';
 ReactDOM.render(
     <>
         <GlobalStyles />,
-        <App />,
+        <App />
     </>,
     document.getElementById('root'),
 );

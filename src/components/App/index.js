@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Post from "../Post";
 import Header from "../Header";
 import Button from "../Button";
+import { Title } from './styles';
+
 import { ThemeProvider } from "../../context/ThemeContext";
 
 function App() {
@@ -37,10 +39,10 @@ function App() {
   return (
     <ThemeProvider>
       <Header>
-        <h2>
+        <Title as='h2'>
           Posts Of The Week
           <Button onClick={handleInsert}>Insert</Button>
-        </h2>
+        </Title>
       </Header>
 
       <hr />
