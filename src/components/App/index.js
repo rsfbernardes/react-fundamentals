@@ -31,8 +31,11 @@ function App() {
 
   function handleRemovePost(postId) {
     setPosts(
-      (prevState) => (prevState.filter(
-        (post) => post.id !== postId
+      (prevState) => (
+        prevState.map(
+        (post) => post.id === postId
+          ? { ...post, removed: true }
+          : post
       ))
     );
   }
