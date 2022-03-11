@@ -24,6 +24,7 @@ function App() {
         subtitle: `Sub#0${prevState.length + 1}`,
         likes: 50,
         read: false,
+        removed: false,
       },
     ]));
   }
